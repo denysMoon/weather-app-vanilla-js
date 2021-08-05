@@ -1,6 +1,7 @@
 // Get Page
 
-const name = document.querySelector('.')
+let cityName = document.querySelector('.cityName')
+let country = document.querySelector('.country')
 
 //Get Weather
 
@@ -25,8 +26,11 @@ function getWeatherHere(lat, long){
     .then(res=>dataToPage(res))
 }
 
-function dataToPage(data){
-    console.log(data.location.region)
+function dataToPage(response){
+    cityName.innerText = response.location.name
+    country.innerText = response.location.country
+    console.log(response)
+    
 }
 
 getLocation()
