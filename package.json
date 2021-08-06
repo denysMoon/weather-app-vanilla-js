@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/denysMoon/weather-app-vanilla-js#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "chart.js": "^3.5.0"
   }
 }

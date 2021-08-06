@@ -40,6 +40,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 input{
     height: 30px;
@@ -53,3 +54,21 @@ input{
     width: 60px;
     height: 60px;
 }
+.sunset{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#line{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-top: 2px solid black;
+    border-radius: 50px;
+}
+/* .sunset span::before{
+    content:'';
+    width: 35px;
+    height: 35px;
+    background: url('');
+} */

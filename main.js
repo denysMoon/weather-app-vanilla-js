@@ -15,6 +15,9 @@ let cityForm = document.querySelector('.search form')
 let inputForm = document.querySelector('.search form input')
 let cityFromForm
 
+let sunrise = document.querySelector('#sunrise')
+let sunset = document.querySelector('#sunset')
+
 //Get Weather
 
 const KEY = 'ef24d4f6e88e4cefbda163227210208'
@@ -49,8 +52,8 @@ function dataToPage(response){
     minTemp.innerText = `${response.forecast.forecastday[0].day.mintemp_c}℃`
     avgTemp.innerText = `${response.forecast.forecastday[0].day.avgtemp_c}℃`
 
-
-    console.log(response.forecast.forecastday[0].day.maxtemp_c)
+    sunrise.innerHTML = `<i class="far fa-sun"></i>${response.forecast.forecastday[0].astro.sunrise}`
+    sunset.innerHTML = `<i class="fas fa-moon"></i>${response.forecast.forecastday[0].astro.sunset}`
 }
 
 function getCityWeather(city){
