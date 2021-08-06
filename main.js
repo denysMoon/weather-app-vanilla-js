@@ -14,7 +14,7 @@ http://api.weatherapi.com/v1/current.json?key=ef24d4f6e88e4cefbda163227210208&q=
 function getLocation(){
     navigator.geolocation.getCurrentPosition(position=>{
         const lat = position.coords.latitude;
-        const long = position.coords.latitude;
+        const long = position.coords.longitude;
         
         getWeatherHere(lat, long)
     })
