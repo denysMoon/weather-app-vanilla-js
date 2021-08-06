@@ -1,0 +1,19 @@
+{
+  "name": "weather-app-vanilla",
+  "version": "1.0.0",
+  "description": "weather",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denysMoon/weather-app-vanilla-js.git"
+  },
+  "author": "Denys Ulvanskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denysMoon/weather-app-vanilla-js/issues"
+  },
+  "homepage": "https://github.com/denysMoon/weather-app-vanilla-js#readme"
+}
