@@ -48,9 +48,9 @@ function dataToPage(response){
     cloudIcon.src = response.current.condition.icon
     temp.innerText = `${response.current.temp_c}℃`
 
-    maxTemp.innerText = `${response.forecast.forecastday[0].day.maxtemp_c}℃`
-    minTemp.innerText = `${response.forecast.forecastday[0].day.mintemp_c}℃`
-    avgTemp.innerText = `${response.forecast.forecastday[0].day.avgtemp_c}℃`
+    maxTemp.innerText = `Maximum ${response.forecast.forecastday[0].day.maxtemp_c}℃`
+    minTemp.innerText = `Minimum ${response.forecast.forecastday[0].day.mintemp_c}℃`
+    avgTemp.innerText = `Average ${response.forecast.forecastday[0].day.avgtemp_c}℃`
 
     sunrise.innerHTML = `<i class="far fa-sun"></i>${response.forecast.forecastday[0].astro.sunrise}`
     sunset.innerHTML = `<i class="fas fa-moon"></i>${response.forecast.forecastday[0].astro.sunset}`
@@ -76,3 +76,19 @@ cityForm.addEventListener('submit',(e)=>{
 })
 
 getLocation()
+
+//Input hint
+
+let hintDiv = document.createElement('span')
+
+inputForm.addEventListener('mouseover', hint)
+inputForm.addEventListener('mouseout', hideHint)
+
+function hint(){
+    hintDiv.innerText = 'Type in English'
+    document.body.append(hintDiv)
+}
+
+function hideHint(){
+    hintDiv.remove()
+}

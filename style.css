@@ -63,7 +63,7 @@ input{
     display: inline-block;
     width: 150px;
     height: 150px;
-    border-top: 2px solid black;
+    border-top: 15px solid #585858;
     border-radius: 50px;
 }
 /* .sunset span::before{
