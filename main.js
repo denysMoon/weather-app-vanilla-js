@@ -5,6 +5,12 @@ let country = document.querySelector('.country')
 let cloud = document.querySelector('.cloud')
 let cloudIcon = document.querySelector('.cloudIcon')
 
+let temp = document.querySelector('.temp')
+
+let maxTemp = document.querySelector('#max-temp')
+let minTemp = document.querySelector('#min-temp')
+let avgTemp = document.querySelector('#avg-temp')
+
 let cityForm = document.querySelector('.search form')
 let inputForm = document.querySelector('.search form input')
 let cityFromForm
@@ -27,7 +33,7 @@ function getLocation(){
 }
 
 function getWeatherHere(lat, long){
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${KEY}&q=${lat},${long}&aqi=no`)
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=${KEY}&q=${lat},${long}&days=1&aqi=no&alerts=no`)
     .then(res=>res.json())
     .then(res=>dataToPage(res))
 }
@@ -36,11 +42,19 @@ function dataToPage(response){
     cityName.innerText = response.location.name
     country.innerText = response.location.country
     cloud.innerText = response.current.condition.text
-    cloudIcon.src = response.current.condition.icon    
+    cloudIcon.src = response.current.condition.icon
+    temp.innerText = `${response.current.temp_c}℃`
+
+    maxTemp.innerText = `${response.forecast.forecastday[0].day.maxtemp_c}℃`
+    minTemp.innerText = `${response.forecast.forecastday[0].day.mintemp_c}℃`
+    avgTemp.innerText = `${response.forecast.forecastday[0].day.avgtemp_c}℃`
+
+
+    console.log(response.forecast.forecastday[0].day.maxtemp_c)
 }
 
 function getCityWeather(city){
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${KEY}&q=${city}&aqi=no`)
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=${KEY}&q=${city}&days=1&aqi=no&alerts=no`)
     .then(res=>res.json())
     .then(res=>dataToPage(res))
 }
